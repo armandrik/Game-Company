@@ -1,0 +1,1088 @@
+$primary-white : #ffffff;
+$purple : #a700f6;
+$font-color : #01204b;
+$secondary-font-color : #878787;
+$border-color : #eaf2fe;
+$box-shadow : #dfc7fbdb;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.App {
+    text-align: center;
+}
+
+.game-card {
+    background-color: $primary-white;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px -3px $box-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-left: 20px;
+    width: 280px;
+    height: 130px;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        box-shadow: 8px 8px 0px 1px $box-shadow;
+    }
+}
+
+.game-card-image {
+    width: 85px;
+    height: 85px;
+    background-size: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    border: 6px solid $border-color;
+}
+
+.game-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h1 {
+        color: $font-color;
+    }
+
+    p {
+        color: $secondary-font-color;
+        // margin-top: -20px;
+    }
+}
+
+.header-container {
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 50px;
+
+        .zozo-game-icon {
+            background-color: $primary-white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 69px;
+            width: 215px;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 8px 8px 15px -3px $box-shadow;
+
+            transition: .3s;
+
+            &:hover {
+                box-shadow: 8px 8px 0px 1px $box-shadow;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+
+            h1 {
+                font-size: 21px;
+                color: $font-color;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+
+        .menu-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+
+            a {
+                color: $font-color;
+                font-weight: 700;
+                cursor: pointer;
+                font-size: 15px;
+                text-decoration: none;
+
+                &:focus,
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+
+        img {
+            width: 150px;
+            height: 150px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .primary-img {
+            position: absolute;
+            top: 80px;
+            left: 12%;
+        }
+
+        .secondary-img {
+            position: absolute;
+            top: 80px;
+            right: 12%;
+        }
+
+        .jump-on-container {
+            @extend .game-card;
+
+            .jump-on-image {
+                @extend .game-card-image;
+                background-image: url(../assets/game/pfp-2.png);
+            }
+
+            .title {
+                @extend .game-card-title
+            }
+        }
+    }
+
+    .title-container {
+        margin: 100px 0;
+
+        h1 {
+            color: $font-color;
+            font-size: 75px;
+            line-height: 1.4em;
+
+            span {
+                color: $primary-white;
+                background-color: $purple;
+                border-radius: 60px;
+                padding: 0px 30px 7px 30px;
+            }
+        }
+
+        p {
+            font-size: 29px;
+            color: $font-color;
+            margin-top: 30px;
+            line-height: 1.4em;
+        }
+    }
+
+    .bottom {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        background-image: url(../assets/background/main-top.png);
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+
+        .feed-the-cat {
+            @extend .game-card;
+
+            .feed-cat-image {
+                @extend .game-card-image;
+                background-image: url(../assets/game/pfp-3.png);
+            }
+
+            .title {
+                @extend .game-card-title
+            }
+        }
+
+        .ripple-delete {
+            @extend .game-card;
+
+            .ripple-delete-image {
+                background-image: url(../assets/game/pfp-1.png);
+                @extend .game-card-image;
+            }
+
+            .title {
+                @extend .game-card-title
+            }
+        }
+    }
+
+    .fab {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 5;
+        cursor: pointer;
+        background-color: $primary-white;
+        box-shadow: 3px 3px 0px 1px $box-shadow;
+        border-radius: 5px;
+        padding: 5px;
+        transition: .2s;
+
+        &:active {
+            box-shadow: none;
+            transform: translate(3px, 3px);
+        }
+    }
+
+    .burger-menu {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: $primary-white;
+        box-shadow: 5px 5px 8px 0px $box-shadow;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 5px 5px 0px 0px $box-shadow;
+        }
+    }
+}
+
+.game-container {
+
+    .explore-container {
+        margin-bottom: 50px;
+
+        img {
+            width: 150px;
+            height: 150px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1 {
+            color: $font-color;
+            font-size: 50px;
+            font-weight: 400;
+            margin: 40px 0;
+
+            span {
+                color: $primary-white;
+                background-color: $purple;
+                border-radius: 60px;
+                padding: 0px 20px 7px 20px;
+            }
+        }
+
+        p {
+            color: $font-color;
+            font-size: 20px;
+            width: 620px;
+            text-align: center;
+            margin: auto;
+            line-height: 30px;
+        }
+    }
+
+    .game-explore-container {
+        margin-top: 150px;
+
+        .game-details-wrapper {
+            width: 90%;
+            box-shadow: inset 0 0 0 1000px rgba(20, 48, 80, 0.336);
+            background-image: url(../assets/game/bg-2.png);
+            background-position: center;
+            background-size: cover;
+            margin: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 110px 70px;
+            margin-bottom: 100px;
+
+
+            &:nth-child(2) {
+                justify-content: flex-end;
+                background-image: url(../assets/game/bg-3.png);
+            }
+
+            &:nth-child(3) {
+                background-image: url(../assets/game/bg-1.png);
+            }
+
+            .card-wrapper {
+                background-color: $primary-white;
+                width: 650px;
+                height: 470px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 20px;
+                padding: 0 50px;
+
+                .game-details {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 15px;
+
+                    .game-logo {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 20px;
+
+                        .jump-on-image {
+                            background-image: url(../assets/game/pfp-2.png);
+                            @extend .game-card-image;
+                        }
+
+                        .feed-cat-image {
+                            background-image: url(../assets/game/pfp-3.png);
+                            @extend .game-card-image;
+                        }
+
+                        .ripple-image {
+                            background-image: url(../assets/game/pfp-1.png);
+                            @extend .game-card-image;
+                        }
+
+                        .title {
+                            h1 {
+                                color: $font-color;
+                                font-size: 24px;
+                            }
+
+                            p {
+                                color: $secondary-font-color;
+                                text-align: left;
+                            }
+                        }
+                    }
+
+                    .para {
+                        text-align: left;
+                        width: 310px;
+                        color: $font-color;
+                        font-size: 15px;
+                        line-height: 1.6rem;
+                        margin: 15px 0;
+                    }
+
+                    .download-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 20px;
+                        width: 100%;
+
+                        img {
+                            width: 120px;
+                            height: 40px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.career-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 0 20px 100px;
+    background-image: url(../assets/background/main-middle.png);
+    background-position: center;
+    background-size: cover;
+
+    div {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        h4 {
+            color: $font-color;
+            font-size: 24px;
+            text-align: left;
+        }
+
+        h1 {
+            color: $font-color;
+            font-size: 50px;
+            text-align: left;
+            font-weight: 400;
+            margin: 30px 0;
+
+            span {
+                color: $primary-white;
+                background-color: $purple;
+                border-radius: 60px;
+                padding: 0px 20px 7px 20px;
+            }
+        }
+
+        button {
+            color: $primary-white;
+            width: 150px;
+            height: 60px;
+            background-color: $font-color;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: .4s;
+
+            &:hover {
+                background-color: $purple;
+            }
+        }
+    }
+
+    img {
+        width: 635px;
+        height: 328px;
+        border-radius: 20px;
+        margin: 70px 0;
+    }
+}
+
+.about-container {
+    background-color: $purple;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 100px 50px;
+    margin: 50px 0;
+
+    .about {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        width: 700px;
+        z-index: 2;
+
+        h4 {
+            color: $primary-white;
+            font-size: 24px;
+            text-align: left;
+        }
+
+        h1 {
+            color: $primary-white;
+            font-size: 2.5vw;
+            text-align: left;
+            font-weight: 400;
+            margin: 30px 0;
+        }
+
+        button {
+            color: $font-color;
+            width: 150px;
+            height: 60px;
+            background-color: $primary-white;
+            border: 2px solid $primary-white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: .4s;
+
+            &:hover {
+                background-color: transparent;
+                color: $primary-white;
+            }
+        }
+    }
+
+    .form-container {
+        background-color: $primary-white;
+        border-radius: 20px;
+        width: 490px;
+        height: 650px;
+        padding: 30px;
+        z-index: 2;
+
+        h2 {
+            color: $font-color;
+            text-align: left;
+        }
+
+        p {
+            color: $font-color;
+            text-align: left;
+            font-size: 15px;
+            width: 310px;
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            input {
+                width: 100%;
+                height: 60px;
+                border: 1px solid $font-color;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 15px;
+                margin-bottom: 30px;
+
+                &:hover {
+                    border-width: 2px;
+                }
+            }
+
+            label {
+                text-align: left;
+                width: 100%;
+                margin-bottom: 15px;
+                color: $secondary-font-color;
+            }
+
+            textarea {
+                width: 100%;
+                height: 100px;
+                border: 1px solid $font-color;
+                border-radius: 5px;
+                resize: none;
+                padding: 20px;
+                font-size: 15px;
+
+                &:hover {
+                    border-width: 2px;
+                }
+            }
+
+            button {
+                width: 100%;
+                height: 50px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 14px;
+                cursor: pointer;
+                background-color: $font-color;
+                border: none;
+                color: $primary-white;
+                transition: .4s;
+                margin-top: 30px;
+
+                &:hover {
+                    background-color: $purple;
+                }
+            }
+        }
+    }
+
+    img {
+        width: 320px;
+        height: 300px;
+        z-index: 1;
+        position: absolute;
+        bottom: -60px;
+        left: 10%;
+    }
+}
+
+.footer-container {
+    margin-top: 200px;
+    padding: 20px 50px;
+
+    .zozo-game-icon {
+        background-color: $primary-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 69px;
+        width: 215px;
+        cursor: pointer;
+        border-radius: 20px;
+        box-shadow: 8px 8px 15px -3px $box-shadow;
+
+        transition: .3s;
+
+        &:hover {
+            box-shadow: 8px 8px 0px 1px $box-shadow;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        h1 {
+            font-size: 21px;
+            color: $font-color;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+
+    h1 {
+        text-align: left;
+        color: $font-color;
+        font-size: 28px;
+        font-weight: 400;
+        margin: 30px 0;
+    }
+
+    .h1 {
+        border-bottom: 1px solid $font-color;
+        padding-bottom: 50px;
+        margin-bottom: -30px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        text-align: left;
+        margin: 70px 0;
+
+        .personal {
+
+            h1 {
+                font-size: 18px;
+                font-weight: bold;
+                color: $font-color;
+            }
+
+            p {
+                font-size: 15px;
+                color: $font-color;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        .sub {
+
+            h1 {
+                font-size: 18px;
+                font-weight: bold;
+                color: $font-color;
+            }
+
+            label {
+                color: $secondary-font-color;
+                display: block;
+                margin-bottom: 15px;
+                margin-top: -10px;
+            }
+
+            input {
+                width: 300px;
+                height: 60px;
+                border: 1px solid $font-color;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 15px;
+
+                &:hover {
+                    border-width: 2px;
+                }
+            }
+
+            button {
+                width: 105px;
+                height: 60px;
+                border: none;
+                color: $primary-white;
+                background-color: $purple;
+                border-radius: 50px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 700;
+                margin-left: 10px;
+                transition: .4s;
+
+                &:hover {
+                    background-color: $font-color;
+
+                }
+            }
+        }
+
+        .sub-menu {
+            h1 {
+                font-size: 18px;
+                font-weight: bold;
+                color: $font-color;
+            }
+
+            p {
+                font-size: 15px;
+                color: $font-color;
+                margin-bottom: 10px;
+            }
+        }
+
+        .social-menu {
+            h1 {
+                font-size: 18px;
+                font-weight: bold;
+                color: $font-color;
+            }
+
+            p {
+                font-size: 15px;
+                color: $font-color;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .download-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        img {
+            width: 120px;
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+
+    span {
+        font-size: 14px;
+        color: $font-color;
+    }
+}
+
+@media screen and (max-width : 900px) {
+    .header-container {
+        display: flex;
+        flex-direction: column;
+
+        .navbar {
+            .zozo-game-icon {
+                height: 50px;
+                width: 190px;
+                border-radius: 10px;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                h1 {
+                    font-size: 18px;
+                }
+            }
+
+            .menu-wrapper {
+                display: none;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+        }
+
+        .top {
+            order: 2;
+
+            .primary-img {
+                top: 180%;
+                left: 7%;
+            }
+
+            .secondary-img {
+                top: 40px;
+                right: 7%;
+            }
+        }
+
+        .title-container {
+            order: 1;
+            margin: 30px 0;
+
+            h1 {
+                font-size: 7vw;
+            }
+
+            p {
+                font-size: 3vw;
+            }
+        }
+
+        .bottom {
+            order: 3;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-top: 40px;
+            background-position: bottom;
+            background-size: 900px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .game-container {
+        .explore-container {
+            p {
+                width: 80%;
+            }
+        }
+
+        .game-explore-container {
+            margin-top: 100px;
+
+            .game-details-wrapper {
+                width: 100%;
+                height: 327px;
+                background-size: 100% 327px;
+                background-position: top;
+                background-repeat: no-repeat;
+                margin-bottom: 500px;
+                justify-content: center;
+                padding: 0 20px;
+
+                &:nth-child(2) {
+                    justify-content: center;
+                }
+
+                .card-wrapper {
+                    margin-top: 700px;
+                    padding: 40px 20px 0 20px;
+                    justify-content: center;
+                    align-items: flex-start;
+
+                    .game-details {
+                        justify-content: space-between;
+                        height: 375px;
+                        padding-top: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .career-container {
+        padding: 0 0 0 20px;
+
+        div {
+            h1 {
+                font-size: 5vw;
+            }
+        }
+
+        img {
+            width: 320px;
+            height: 165px;
+        }
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        .about {
+            order: 1;
+            width: 100%;
+        }
+
+        .form-container {
+            order: 3;
+            width: 90%;
+        }
+
+        img {
+            position: relative;
+            top: 0;
+            left: 0;
+            order: 2;
+            width: 220px;
+            height: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 557px) {
+    .game-card {
+        height: 100px;
+        padding-left: 7px;
+    }
+
+    .header-container {
+        .navbar {
+            padding: 20px 20px 0 20px;
+        }
+
+        .title-container {
+            h1 {
+                max-width: 271px;
+                font-size: 39px;
+                margin: auto;
+
+                span {
+                    display: block;
+                }
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .top {
+            img {
+                width: 50px;
+                height: 50px;
+                z-index: 2;
+            }
+
+            .primary-img {
+                top: 367%;
+                left: 53%;
+            }
+
+            .secondary-img {
+                top: -25px;
+                left: 69%;
+            }
+        }
+    }
+
+    .game-container {
+
+        .explore-container {
+            img {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .game-explore-container {
+            .game-details-wrapper {
+                margin-bottom: 700px;
+                background-size: 160% 327px;
+
+                .card-wrapper {
+                    width: 90%;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding: 10px 20px;
+                    margin-top: 600px;
+
+                    .game-details {
+                        .para {
+                            width: 100%;
+                        }
+
+                        .download-btn {
+                            justify-content: center;
+                            margin-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .career-container {
+        background-image: none;
+        margin-top: 740px;
+
+        div {
+            h4 {
+                font-size: 22px;
+            }
+
+            h1 {
+                line-height: 2.1rem;
+            }
+        }
+
+        img {
+            margin: 30px 0;
+        }
+    }
+
+    .about-container {
+        padding: 50px 20px;
+
+        .about {
+            h1 {
+                font-size: 15px;
+            }
+        }
+
+        .form-container {
+            width: 95%;
+
+            p {
+                width: 100%;
+            }
+        }
+    }
+
+    .footer-container {
+        margin-top: 50px;
+        padding: 10px;
+
+        .zozo-game-icon {
+            height: 50px;
+            width: 190px;
+            border-radius: 10px;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .content {
+            .sub {
+                input {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

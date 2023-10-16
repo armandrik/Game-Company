@@ -1,0 +1,848 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.App {
+  text-align: center;
+}
+
+.game-card, .header-container .bottom .ripple-delete, .header-container .bottom .feed-the-cat, .header-container .top .jump-on-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 20px;
+  width: 280px;
+  height: 130px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.game-card:hover, .header-container .bottom .ripple-delete:hover, .header-container .bottom .feed-the-cat:hover, .header-container .top .jump-on-container:hover {
+  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+}
+
+.game-card-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .ripple-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .feed-cat-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .jump-on-image, .header-container .bottom .ripple-delete .ripple-delete-image, .header-container .bottom .feed-the-cat .feed-cat-image, .header-container .top .jump-on-container .jump-on-image {
+  width: 85px;
+  height: 85px;
+  background-size: 180px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  border: 6px solid #eaf2fe;
+}
+
+.game-card-title, .header-container .bottom .ripple-delete .title, .header-container .bottom .feed-the-cat .title, .header-container .top .jump-on-container .title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.game-card-title h1, .header-container .bottom .ripple-delete .title h1, .header-container .bottom .feed-the-cat .title h1, .header-container .top .jump-on-container .title h1 {
+  color: #01204b;
+}
+.game-card-title p, .header-container .bottom .ripple-delete .title p, .header-container .bottom .feed-the-cat .title p, .header-container .top .jump-on-container .title p {
+  color: #878787;
+}
+
+.header-container .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 50px;
+}
+.header-container .navbar .zozo-game-icon {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 69px;
+  width: 215px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  transition: 0.3s;
+}
+.header-container .navbar .zozo-game-icon:hover {
+  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+}
+.header-container .navbar .zozo-game-icon img {
+  width: 30px;
+  height: 30px;
+}
+.header-container .navbar .zozo-game-icon h1 {
+  font-size: 21px;
+  color: #01204b;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.header-container .navbar .menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.header-container .navbar .menu-wrapper a {
+  color: #01204b;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+}
+.header-container .navbar .menu-wrapper a:focus, .header-container .navbar .menu-wrapper a:hover {
+  color: #a700f6;
+}
+.header-container .top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.header-container .top img {
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: -1;
+}
+.header-container .top .primary-img {
+  position: absolute;
+  top: 80px;
+  left: 12%;
+}
+.header-container .top .secondary-img {
+  position: absolute;
+  top: 80px;
+  right: 12%;
+}
+.header-container .top .jump-on-container .jump-on-image {
+  background-image: url(../assets/game/pfp-2.png);
+}
+.header-container .title-container {
+  margin: 100px 0;
+}
+.header-container .title-container h1 {
+  color: #01204b;
+  font-size: 75px;
+  line-height: 1.4em;
+}
+.header-container .title-container h1 span {
+  color: #ffffff;
+  background-color: #a700f6;
+  border-radius: 60px;
+  padding: 0px 30px 7px 30px;
+}
+.header-container .title-container p {
+  font-size: 29px;
+  color: #01204b;
+  margin-top: 30px;
+  line-height: 1.4em;
+}
+.header-container .bottom {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-image: url(../assets/background/main-top.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.header-container .bottom .feed-the-cat .feed-cat-image {
+  background-image: url(../assets/game/pfp-3.png);
+}
+.header-container .bottom .ripple-delete .ripple-delete-image {
+  background-image: url(../assets/game/pfp-1.png);
+}
+.header-container .fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 5;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 0px 1px rgba(223, 199, 251, 0.8588235294);
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s;
+}
+.header-container .fab:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+.header-container .burger-menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 8px 0px rgba(223, 199, 251, 0.8588235294);
+  cursor: pointer;
+}
+.header-container .burger-menu:hover {
+  box-shadow: 5px 5px 0px 0px rgba(223, 199, 251, 0.8588235294);
+}
+
+.game-container .explore-container {
+  margin-bottom: 50px;
+}
+.game-container .explore-container img {
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+  pointer-events: none;
+}
+.game-container .explore-container h1 {
+  color: #01204b;
+  font-size: 50px;
+  font-weight: 400;
+  margin: 40px 0;
+}
+.game-container .explore-container h1 span {
+  color: #ffffff;
+  background-color: #a700f6;
+  border-radius: 60px;
+  padding: 0px 20px 7px 20px;
+}
+.game-container .explore-container p {
+  color: #01204b;
+  font-size: 20px;
+  width: 620px;
+  text-align: center;
+  margin: auto;
+  line-height: 30px;
+}
+.game-container .game-explore-container {
+  margin-top: 150px;
+}
+.game-container .game-explore-container .game-details-wrapper {
+  width: 90%;
+  box-shadow: inset 0 0 0 1000px rgba(20, 48, 80, 0.336);
+  background-image: url(../assets/game/bg-2.png);
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 110px 70px;
+  margin-bottom: 100px;
+}
+.game-container .game-explore-container .game-details-wrapper:nth-child(2) {
+  justify-content: flex-end;
+  background-image: url(../assets/game/bg-3.png);
+}
+.game-container .game-explore-container .game-details-wrapper:nth-child(3) {
+  background-image: url(../assets/game/bg-1.png);
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper {
+  background-color: #ffffff;
+  width: 650px;
+  height: 470px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 50px;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .jump-on-image {
+  background-image: url(../assets/game/pfp-2.png);
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .feed-cat-image {
+  background-image: url(../assets/game/pfp-3.png);
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .ripple-image {
+  background-image: url(../assets/game/pfp-1.png);
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .title h1 {
+  color: #01204b;
+  font-size: 24px;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .title p {
+  color: #878787;
+  text-align: left;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .para {
+  text-align: left;
+  width: 310px;
+  color: #01204b;
+  font-size: 15px;
+  line-height: 1.6rem;
+  margin: 15px 0;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+.game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .download-btn img {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.career-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px 0 20px 100px;
+  background-image: url(../assets/background/main-middle.png);
+  background-position: center;
+  background-size: cover;
+}
+.career-container div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.career-container div h4 {
+  color: #01204b;
+  font-size: 24px;
+  text-align: left;
+}
+.career-container div h1 {
+  color: #01204b;
+  font-size: 50px;
+  text-align: left;
+  font-weight: 400;
+  margin: 30px 0;
+}
+.career-container div h1 span {
+  color: #ffffff;
+  background-color: #a700f6;
+  border-radius: 60px;
+  padding: 0px 20px 7px 20px;
+}
+.career-container div button {
+  color: #ffffff;
+  width: 150px;
+  height: 60px;
+  background-color: #01204b;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.career-container div button:hover {
+  background-color: #a700f6;
+}
+.career-container img {
+  width: 635px;
+  height: 328px;
+  border-radius: 20px;
+  margin: 70px 0;
+}
+
+.about-container {
+  background-color: #a700f6;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 100px 50px;
+  margin: 50px 0;
+}
+.about-container .about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  z-index: 2;
+}
+.about-container .about h4 {
+  color: #ffffff;
+  font-size: 24px;
+  text-align: left;
+}
+.about-container .about h1 {
+  color: #ffffff;
+  font-size: 2.5vw;
+  text-align: left;
+  font-weight: 400;
+  margin: 30px 0;
+}
+.about-container .about button {
+  color: #01204b;
+  width: 150px;
+  height: 60px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.about-container .about button:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+.about-container .form-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 490px;
+  height: 650px;
+  padding: 30px;
+  z-index: 2;
+}
+.about-container .form-container h2 {
+  color: #01204b;
+  text-align: left;
+}
+.about-container .form-container p {
+  color: #01204b;
+  text-align: left;
+  font-size: 15px;
+  width: 310px;
+  margin: 20px 0;
+}
+.about-container .form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about-container .form-container form input {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #01204b;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.about-container .form-container form input:hover {
+  border-width: 2px;
+}
+.about-container .form-container form label {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #878787;
+}
+.about-container .form-container form textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #01204b;
+  border-radius: 5px;
+  resize: none;
+  padding: 20px;
+  font-size: 15px;
+}
+.about-container .form-container form textarea:hover {
+  border-width: 2px;
+}
+.about-container .form-container form button {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #01204b;
+  border: none;
+  color: #ffffff;
+  transition: 0.4s;
+  margin-top: 30px;
+}
+.about-container .form-container form button:hover {
+  background-color: #a700f6;
+}
+.about-container img {
+  width: 320px;
+  height: 300px;
+  z-index: 1;
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+}
+
+.footer-container {
+  margin-top: 200px;
+  padding: 20px 50px;
+}
+.footer-container .zozo-game-icon {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 69px;
+  width: 215px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  transition: 0.3s;
+}
+.footer-container .zozo-game-icon:hover {
+  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+}
+.footer-container .zozo-game-icon img {
+  width: 30px;
+  height: 30px;
+}
+.footer-container .zozo-game-icon h1 {
+  font-size: 21px;
+  color: #01204b;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.footer-container h1 {
+  text-align: left;
+  color: #01204b;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 30px 0;
+}
+.footer-container .h1 {
+  border-bottom: 1px solid #01204b;
+  padding-bottom: 50px;
+  margin-bottom: -30px;
+}
+.footer-container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: left;
+  margin: 70px 0;
+}
+.footer-container .content .personal h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #01204b;
+}
+.footer-container .content .personal p {
+  font-size: 15px;
+  color: #01204b;
+  margin-bottom: 10px;
+}
+.footer-container .content .sub h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #01204b;
+}
+.footer-container .content .sub label {
+  color: #878787;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: -10px;
+}
+.footer-container .content .sub input {
+  width: 300px;
+  height: 60px;
+  border: 1px solid #01204b;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 15px;
+}
+.footer-container .content .sub input:hover {
+  border-width: 2px;
+}
+.footer-container .content .sub button {
+  width: 105px;
+  height: 60px;
+  border: none;
+  color: #ffffff;
+  background-color: #a700f6;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+  transition: 0.4s;
+}
+.footer-container .content .sub button:hover {
+  background-color: #01204b;
+}
+.footer-container .content .sub-menu h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #01204b;
+}
+.footer-container .content .sub-menu p {
+  font-size: 15px;
+  color: #01204b;
+  margin-bottom: 10px;
+}
+.footer-container .content .social-menu h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #01204b;
+}
+.footer-container .content .social-menu p {
+  font-size: 15px;
+  color: #01204b;
+  margin-bottom: 10px;
+}
+.footer-container .download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.footer-container .download-btn img {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+.footer-container span {
+  font-size: 14px;
+  color: #01204b;
+}
+
+@media screen and (max-width: 900px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-container .navbar .zozo-game-icon {
+    height: 50px;
+    width: 190px;
+    border-radius: 10px;
+  }
+  .header-container .navbar .zozo-game-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .header-container .navbar .zozo-game-icon h1 {
+    font-size: 18px;
+  }
+  .header-container .navbar .menu-wrapper {
+    display: none;
+  }
+  .header-container .navbar .burger-menu {
+    display: flex;
+  }
+  .header-container .top {
+    order: 2;
+  }
+  .header-container .top .primary-img {
+    top: 180%;
+    left: 7%;
+  }
+  .header-container .top .secondary-img {
+    top: 40px;
+    right: 7%;
+  }
+  .header-container .title-container {
+    order: 1;
+    margin: 30px 0;
+  }
+  .header-container .title-container h1 {
+    font-size: 7vw;
+  }
+  .header-container .title-container p {
+    font-size: 3vw;
+  }
+  .header-container .bottom {
+    order: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    background-position: bottom;
+    background-size: 900px;
+    background-repeat: no-repeat;
+  }
+  .game-container .explore-container p {
+    width: 80%;
+  }
+  .game-container .game-explore-container {
+    margin-top: 100px;
+  }
+  .game-container .game-explore-container .game-details-wrapper {
+    width: 100%;
+    height: 327px;
+    background-size: 100% 327px;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin-bottom: 500px;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .game-container .game-explore-container .game-details-wrapper:nth-child(2) {
+    justify-content: center;
+  }
+  .game-container .game-explore-container .game-details-wrapper .card-wrapper {
+    margin-top: 700px;
+    padding: 40px 20px 0 20px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details {
+    justify-content: space-between;
+    height: 375px;
+    padding-top: 14px;
+  }
+  .career-container {
+    padding: 0 0 0 20px;
+  }
+  .career-container div h1 {
+    font-size: 5vw;
+  }
+  .career-container img {
+    width: 320px;
+    height: 165px;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .about-container .about {
+    order: 1;
+    width: 100%;
+  }
+  .about-container .form-container {
+    order: 3;
+    width: 90%;
+  }
+  .about-container img {
+    position: relative;
+    top: 0;
+    left: 0;
+    order: 2;
+    width: 220px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 557px) {
+  .game-card, .header-container .top .jump-on-container, .header-container .bottom .feed-the-cat, .header-container .bottom .ripple-delete {
+    height: 100px;
+    padding-left: 7px;
+  }
+  .header-container .navbar {
+    padding: 20px 20px 0 20px;
+  }
+  .header-container .title-container h1 {
+    max-width: 271px;
+    font-size: 39px;
+    margin: auto;
+  }
+  .header-container .title-container h1 span {
+    display: block;
+  }
+  .header-container .title-container p {
+    font-size: 15px;
+  }
+  .header-container .top img {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+  }
+  .header-container .top .primary-img {
+    top: 367%;
+    left: 53%;
+  }
+  .header-container .top .secondary-img {
+    top: -25px;
+    left: 69%;
+  }
+  .game-container .explore-container img {
+    width: 140px;
+    height: 140px;
+  }
+  .game-container .explore-container h1 {
+    font-size: 32px;
+  }
+  .game-container .explore-container p {
+    font-size: 15px;
+  }
+  .game-container .game-explore-container .game-details-wrapper {
+    margin-bottom: 700px;
+    background-size: 160% 327px;
+  }
+  .game-container .game-explore-container .game-details-wrapper .card-wrapper {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    margin-top: 600px;
+  }
+  .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .para {
+    width: 100%;
+  }
+  .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .download-btn {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .career-container {
+    background-image: none;
+    margin-top: 740px;
+  }
+  .career-container div h4 {
+    font-size: 22px;
+  }
+  .career-container div h1 {
+    line-height: 2.1rem;
+  }
+  .career-container img {
+    margin: 30px 0;
+  }
+  .about-container {
+    padding: 50px 20px;
+  }
+  .about-container .about h1 {
+    font-size: 15px;
+  }
+  .about-container .form-container {
+    width: 95%;
+  }
+  .about-container .form-container p {
+    width: 100%;
+  }
+  .footer-container {
+    margin-top: 50px;
+    padding: 10px;
+  }
+  .footer-container .zozo-game-icon {
+    height: 50px;
+    width: 190px;
+    border-radius: 10px;
+  }
+  .footer-container .zozo-game-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .footer-container .zozo-game-icon h1 {
+    font-size: 18px;
+  }
+  .footer-container h1 {
+    font-size: 24px;
+  }
+  .footer-container .content .sub input {
+    width: 200px;
+  }
+}/*# sourceMappingURL=App.css.map */
