@@ -249,12 +249,54 @@ $box-shadow : #dfc7fbdb;
         background-color: $primary-white;
         box-shadow: 5px 5px 8px 0px $box-shadow;
         cursor: pointer;
+        position: relative;
 
         &:hover {
             box-shadow: 5px 5px 0px 0px $box-shadow;
         }
+
     }
+
+    .responsive-menu {
+        background-color: $font-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 50px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 3;
+        padding-top: 50px;
+        transition: .3s;
+
+        button {
+            border: none;
+            cursor: pointer;
+            align-self: flex-end;
+            padding: 20px;
+            background-color: transparent;
+        }
+
+        a {
+            color: $primary-white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: 700;
+
+            &:focus,
+            &:hover {
+                color: $purple;
+            }
+        }
+    }
+
 }
+
 
 .game-container {
 

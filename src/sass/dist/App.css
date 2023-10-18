@@ -12,7 +12,7 @@
 .game-card, .header-container .bottom .ripple-delete, .header-container .bottom .feed-the-cat, .header-container .top .jump-on-container {
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 15px -3px #dfc7fbdb;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -24,7 +24,7 @@
   transition: 0.3s;
 }
 .game-card:hover, .header-container .bottom .ripple-delete:hover, .header-container .bottom .feed-the-cat:hover, .header-container .top .jump-on-container:hover {
-  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 0px 1px #dfc7fbdb;
 }
 
 .game-card-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .ripple-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .feed-cat-image, .game-container .game-explore-container .game-details-wrapper .card-wrapper .game-details .game-logo .jump-on-image, .header-container .bottom .ripple-delete .ripple-delete-image, .header-container .bottom .feed-the-cat .feed-cat-image, .header-container .top .jump-on-container .jump-on-image {
@@ -66,11 +66,11 @@
   width: 215px;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 15px -3px #dfc7fbdb;
   transition: 0.3s;
 }
 .header-container .navbar .zozo-game-icon:hover {
-  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 0px 1px #dfc7fbdb;
 }
 .header-container .navbar .zozo-game-icon img {
   width: 30px;
@@ -165,7 +165,7 @@
   z-index: 5;
   cursor: pointer;
   background-color: #ffffff;
-  box-shadow: 3px 3px 0px 1px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 3px 3px 0px 1px #dfc7fbdb;
   border-radius: 5px;
   padding: 5px;
   transition: 0.2s;
@@ -182,14 +182,14 @@
   width: 50px;
   height: 50px;
   background-color: #ffffff;
-  box-shadow: 5px 5px 8px 0px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 5px 5px 8px 0px #dfc7fbdb;
   cursor: pointer;
   position: relative;
 }
 .header-container .burger-menu:hover {
-  box-shadow: 5px 5px 0px 0px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 5px 5px 0px 0px #dfc7fbdb;
 }
-.header-container .responsive-menu {
+.header-container .burger-menu .responsive-menu {
   background-color: #01204b;
   display: flex;
   flex-direction: column;
@@ -201,25 +201,24 @@
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: 3;
+  z-index: 6;
   padding-top: 50px;
-  transition: 0.3s;
 }
-.header-container .responsive-menu button {
+.header-container .burger-menu .responsive-menu button {
   border: none;
   cursor: pointer;
   align-self: flex-end;
   padding: 20px;
   background-color: transparent;
 }
-.header-container .responsive-menu a {
+.header-container .burger-menu .responsive-menu a {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
   font-size: 30px;
   font-weight: 700;
 }
-.header-container .responsive-menu a:focus, .header-container .responsive-menu a:hover {
+.header-container .burger-menu .responsive-menu a:focus, .header-container .burger-menu .responsive-menu a:hover {
   color: #a700f6;
 }
 
@@ -532,11 +531,11 @@
   width: 215px;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 8px 8px 15px -3px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 15px -3px #dfc7fbdb;
   transition: 0.3s;
 }
 .footer-container .zozo-game-icon:hover {
-  box-shadow: 8px 8px 0px 1px rgba(223, 199, 251, 0.8588235294);
+  box-shadow: 8px 8px 0px 1px #dfc7fbdb;
 }
 .footer-container .zozo-game-icon img {
   width: 30px;
@@ -709,6 +708,7 @@
     background-size: 900px;
     background-repeat: no-repeat;
   }
+
   .game-container .explore-container p {
     width: 80%;
   }
@@ -739,6 +739,7 @@
     height: 375px;
     padding-top: 14px;
   }
+
   .career-container {
     padding: 0 0 0 20px;
   }
@@ -749,6 +750,7 @@
     width: 320px;
     height: 165px;
   }
+
   .about-container {
     flex-direction: column;
     align-items: center;
@@ -776,6 +778,7 @@
     height: 100px;
     padding-left: 7px;
   }
+
   .header-container .navbar {
     padding: 20px 20px 0 20px;
   }
@@ -803,6 +806,7 @@
     top: -25px;
     left: 69%;
   }
+
   .game-container .explore-container img {
     width: 140px;
     height: 140px;
@@ -832,6 +836,7 @@
     justify-content: center;
     margin-bottom: 40px;
   }
+
   .career-container {
     background-image: none;
     margin-top: 740px;
@@ -845,6 +850,7 @@
   .career-container img {
     margin: 30px 0;
   }
+
   .about-container {
     padding: 50px 20px;
   }
@@ -857,6 +863,7 @@
   .about-container .form-container p {
     width: 100%;
   }
+
   .footer-container {
     margin-top: 50px;
     padding: 10px;
@@ -879,4 +886,4 @@
   .footer-container .content .sub input {
     width: 200px;
   }
-}/*# sourceMappingURL=App.css.map */
+}
